@@ -25,7 +25,7 @@
 #include "Thread.h"
 
 #include <libnrcore/types.h>
-#include <libnrcore/debug/Log.h>
+#include <nrdebug/Log.h>
 
 #if __APPLE__
 #include <sys/time.h>
@@ -203,7 +203,8 @@ namespace nrcore {
                 wait_for_thread_finish.wait(&wait_for_thread_trigger, 1000);
                 
             } while (!wait_for_thread_finish.isLockedByMe());
-            wait_for_thread_finish.release();
+            if (wait_for_thread_finish.isLockedByMe())
+                wait_for_thread_finish.release();
         } else
             wait_threads_mutex->release();
     }
@@ -327,7 +328,10 @@ namespace nrcore {
             thread->wake();
         }
         
-        while(threads->length()) usleep(100);
+        while(threads->length()) {
+            t.get(0)->wake();
+            usleep(500);
+        }
     }
     
     Task *Thread::getNextTask() {

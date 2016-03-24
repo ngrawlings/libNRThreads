@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "NrThreads" */;
+			buildConfigurationList = 97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "LibNrThreads" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -264,6 +264,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/\"",
+					"\"$(SRCROOT)/../libNRCore\"",
+					"\"$(SRCROOT)/../libNrDebug\"",
+					"\"$(SRCROOT)/../libNrIO\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,6 +278,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/\"",
+					"\"$(SRCROOT)/../libNRCore\"",
+					"\"$(SRCROOT)/../libNrDebug\"",
+					"\"$(SRCROOT)/../libNrIO\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -279,7 +291,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "NrThreads" */ = {
+		97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "LibNrThreads" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97B466011C9ADBBE00DD2C30 /* Debug */,
