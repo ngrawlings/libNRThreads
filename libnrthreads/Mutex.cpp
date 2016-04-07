@@ -25,7 +25,6 @@
 #include "Mutex.h"
 
 #include <libnrcore/types.h>
-#include <nrdebug/Log.h>
 
 #if __APPLE__
 #include <sys/time.h>
@@ -33,8 +32,6 @@
 
 #include <assert.h>
 #include <sys/errno.h>
-
-#include <nrdebug/Log.h>
 
 #include "Thread.h"
 
@@ -62,9 +59,6 @@ namespace nrcore {
         if (owner == pthread_self())
             assert("deadlock");
         
-        if (owner != 0 && this->lock_tag)
-            LOG(Log::LOGLEVEL_ERROR, "Mutex locked by %p (%s)", owner, this->lock_tag);
-        
         if (timeout==0) {
             if (pthread_mutex_lock(&mutex))
                 throw "Error: Mutex Lock";
@@ -91,10 +85,8 @@ namespace nrcore {
                 elapse = (start.tv_sec - current.tv_sec) * 1000;
                 elapse += (start.tv_usec - current.tv_usec) / 1000000;
                     
-                if (elapse >= timeout) {
-                    LOG(Log::LOGLEVEL_NOTICE, "mutex %p -> timeout", this);
+                if (elapse >= timeout)
                     return false;
-                }
                     
                     
                 usleep(1000);
@@ -151,7 +143,6 @@ namespace nrcore {
 
     void Mutex::release() {
         if (!isLockedByMe()) {
-            LOG(Log::LOGLEVEL_WARNING, "WARNING: release attempt on mutex that is not owned! (%s)", _tag);
             assert(false);
             return;
         }
@@ -162,7 +153,6 @@ namespace nrcore {
         if (!res) {
             Thread::mutexReleased(this);
         } else {
-            LOG(Log::LOGLEVEL_ERROR, "Error: mutex failed to unlock, err %d", res);
             assert(false);
             return;
         }

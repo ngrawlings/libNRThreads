@@ -25,7 +25,6 @@
 #include "Thread.h"
 
 #include <libnrcore/types.h>
-#include <nrdebug/Log.h>
 
 #if __APPLE__
 #include <sys/time.h>
@@ -134,7 +133,6 @@ namespace nrcore {
                     continue;
                 
             } catch (...) {
-                LOG(Log::LOGLEVEL_ERROR, "Invalid Task in queue");
             }
             
             if (!pool || threads->length() > max_threads)
@@ -160,7 +158,6 @@ namespace nrcore {
                 mutex = mutex_list.get();
                 
                 if (mutex->isManaged() && mutex->isLockedByMe()) {
-                    LOG(Log::LOGLEVEL_WARNING, "WARNING: Mutex not released (Auto Release) %s (%s)", mutex->tag(), mutex->lockTag());
                     mutex->release();
                 }
                 
@@ -246,7 +243,6 @@ namespace nrcore {
                     thrd->wake();
                 }
             } catch (...) {
-                    LOG(Log::LOGLEVEL_ERROR, "An Exception Occurred within a task");
             }
         }
             
@@ -263,8 +259,6 @@ namespace nrcore {
         pool = false;
         
         if (!threads->length()) {
-            LOG(Log::LOGLEVEL_NOTICE, "Releasing up threading system");
-            
             delete threads;
             delete wait_threads;
             delete threads_mutex;

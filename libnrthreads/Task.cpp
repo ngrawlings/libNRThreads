@@ -23,10 +23,9 @@
 //
 
 #include "Task.h"
-#include <nrdebug/Log.h>
 
 #include <assert.h>
-#include <nrthreads/Thread.h>
+#include <libnrthreads/Thread.h>
 
 namespace nrcore {
 
@@ -108,7 +107,6 @@ namespace nrcore {
                 task_queue->remove(node);
             }
         } catch (...) {
-            LOG(Log::LOGLEVEL_ERROR, "there was an exception in getNextTask");
         }
         
         if (ret)
