@@ -38,8 +38,10 @@ namespace nrcore {
         friend class Thread;
         
         Task();
+        Task(bool dynamicly_allocated);
         virtual ~Task();
 
+        static bool taskExists(Task *task);
         static void queueTask(Task *task);
         static void removeTasks(Task *task);
         static Task* getNextTask();
@@ -51,13 +53,17 @@ namespace nrcore {
         
         Thread* getAquiredThread();
         
-        void finished() { task_finished = true; }
+        bool isFinished() { return task_finished; }
 
     protected:
         virtual void run() = 0;
+        void finished() { task_finished = true; }
+        void reset() { task_finished = false; }
+        bool isDynamiclyAllocated();
         
         unsigned long getThreadId();
 
+        bool dynamicly_allocated;
         bool task_finished;
 
     private:

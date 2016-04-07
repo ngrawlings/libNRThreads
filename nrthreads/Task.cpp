@@ -34,6 +34,13 @@ namespace nrcore {
     LinkedList<Task*> *Task::task_queue = 0;
 
     Task::Task() {
+        this->dynamicly_allocated = false;
+        acquired_thread = 0;
+        task_finished = false;
+    }
+    
+    Task::Task(bool dynamicly_allocated) {
+        this->dynamicly_allocated = dynamicly_allocated;
         acquired_thread = 0;
         task_finished = false;
     }
@@ -44,10 +51,22 @@ namespace nrcore {
         if ( acquired_thread && acquired_thread != Thread::getThreadInstance() )
             reinterpret_cast<Thread*>(acquired_thread)->waitUntilFinished();
     }
+    
+    bool Task::taskExists(Task *task) {
+        LinkedListState<Task*> tq(task_queue);
+        int cnt = tq.length();
+        while (cnt--) {
+            if (tq.next() == task)
+                return true;
+        }
+        return false;
+    }
 
     void Task::queueTask(Task *task) {
+        task->reset();
         task_queue_mutex->lock();
-        task_queue->add(task);
+        if (!taskExists(task))
+            task_queue->add(task);
         task_queue_mutex->release();
     }
 
@@ -99,6 +118,10 @@ namespace nrcore {
             task_queue_mutex->release();
 
         return ret;
+    }
+    
+    bool Task::isDynamiclyAllocated() {
+        return dynamicly_allocated;
     }
 
     unsigned long Task::getThreadId() {

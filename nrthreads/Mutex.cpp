@@ -121,6 +121,7 @@ namespace nrcore {
 
     void Mutex::wait(ThreadWaitCondition *cond, int nsecs) {
         if (!nsecs) {
+            lock();
             pthread_cond_wait(cond->getWaitCondition(), &mutex);
             owner = pthread_self();
         } else {

@@ -119,14 +119,14 @@ namespace nrcore {
                 while ((task = getNextTask())) {
                     task->run();
                     task->acquired_thread = 0;
-                    if (task->task_finished)
+                    if (task->dynamicly_allocated && task->task_finished)
                         delete task;
                 }
                 
                 while ((task = dynamic_cast<Task*>(Task::getNextTask()))) {
                     task->run();
                     task->acquired_thread = 0;
-                    if (task->task_finished)
+                    if (task->dynamicly_allocated && task->task_finished)
                         delete task;
                 }
                 
@@ -244,7 +244,7 @@ namespace nrcore {
                 if (thrd) {
                     wait_threads_mutex->release();
                     thrd->wake();
-                } 
+                }
             } catch (...) {
                     LOG(Log::LOGLEVEL_ERROR, "An Exception Occurred within a task");
             }
