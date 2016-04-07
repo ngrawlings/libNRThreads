@@ -24,8 +24,6 @@
 
 #include "ThreadWaitCondition.h"
 
-#include <nrdebug/Log.h>
-
 namespace nrcore {
 
     ThreadWaitCondition::ThreadWaitCondition() {
@@ -38,14 +36,10 @@ namespace nrcore {
 
     void ThreadWaitCondition::trigger() {
         int res = pthread_cond_signal(&condition);
-        if (res)
-            LOG(Log::LOGLEVEL_ERROR, "Failed to wake thread, err: %d", res);
     }
 
     void ThreadWaitCondition::broadcast() {
         int res = pthread_cond_broadcast(&condition);
-        if (res)
-            LOG(Log::LOGLEVEL_ERROR, "Failed to wake thread, err: %d", res);
     }
 
     thread_cond_t *ThreadWaitCondition::getWaitCondition() {
