@@ -52,6 +52,14 @@ namespace nrcore {
     }
     
     bool Task::taskExists(Task *task) {
+        bool ret;
+        task_queue_mutex->lock();
+        ret = _taskExists(task);
+        task_queue_mutex->release();
+        return ret;
+    }
+    
+    bool Task::_taskExists(Task *task) {
         LinkedListState<Task*> tq(task_queue);
         int cnt = tq.length();
         while (cnt--) {
@@ -64,7 +72,7 @@ namespace nrcore {
     void Task::queueTask(Task *task) {
         task->reset();
         task_queue_mutex->lock();
-        if (!taskExists(task))
+        if (!_taskExists(task))
             task_queue->add(task);
         task_queue_mutex->release();
     }

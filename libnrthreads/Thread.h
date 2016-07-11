@@ -60,6 +60,7 @@ namespace nrcore {
         
         static Thread *addThread();
         static Thread *runTask(Task *task);
+        static Thread *getWaitingThread();
         THREAD_STATUS getStatus() { return status; }
         static void stopAllThreads();
         static void staticCleanUp();
@@ -77,10 +78,11 @@ namespace nrcore {
         
         void queueTaskToCurrentThread(Task *task);
         
+        void wake();
+        
     protected:
         void thread_loop();
         
-        void wake();
         void finished();
         
         Task *getNextTask();

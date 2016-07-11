@@ -65,9 +65,6 @@ namespace nrcore {
             owner = pthread_self();
             this->lock_tag = lock_tag;
             
-            if (manage)
-                Thread::mutexLocked(this);
-            
             return true;
         } else {
     #if defined(__APPLE__) || defined(__ANDROID__)
@@ -134,10 +131,7 @@ namespace nrcore {
 
         owner = pthread_self();
         this->lock_tag = lock_tag;
-        
-        if (manage)
-            Thread::mutexLocked(this);
-        
+  
         return true;
     }
 
@@ -150,9 +144,7 @@ namespace nrcore {
         owner = 0;
         
         int res = pthread_mutex_unlock(&mutex);
-        if (!res) {
-            Thread::mutexReleased(this);
-        } else {
+        if (res) {
             assert(false);
             return;
         }

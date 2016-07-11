@@ -146,26 +146,6 @@ namespace nrcore {
 
     void Thread::wait() {
         wait_threads_mutex->lock();
-        
-        if (locked_mutex_list.length()) {
-            Mutex* mutex;
-            
-            LinkedList<Mutex*> mcpy;
-            mcpy.copy(&locked_mutex_list);
-            
-            LinkedListState<Mutex*> mutex_list(&mcpy);
-            while (mutex_list.length()) {
-                mutex = mutex_list.get();
-                
-                if (mutex->isManaged() && mutex->isLockedByMe()) {
-                    mutex->release();
-                }
-                
-                mutex_list.remove();
-            }
-            
-            locked_mutex_list.clear();
-        }
 
         status = THREAD_WAITING;
         wait_threads->add(this);
@@ -250,6 +230,19 @@ namespace nrcore {
             wait_threads_mutex->release();
 
         return thrd;
+    }
+    
+    Thread *Thread::getWaitingThread() {
+        Thread *ret = 0;
+        wait_threads_mutex->lock();
+        
+        if (wait_threads->length())
+            ret = wait_threads->get(wait_threads->firstNode());
+        
+        if (wait_threads_mutex->isLockedByMe())
+            wait_threads_mutex->release();
+        
+        return ret;
     }
 
     void Thread::staticCleanUp() {

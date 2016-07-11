@@ -46,6 +46,7 @@ namespace nrcore {
         static void removeTasks(Task *task);
         static Task* getNextTask();
         
+        
         static int getQueuedTaskCount();
         
         static void staticInit();
@@ -60,6 +61,8 @@ namespace nrcore {
         void finished() { task_finished = true; }
         void reset() { task_finished = false; }
         bool isDynamiclyAllocated();
+        
+        static bool _taskExists(Task *task);
         
         unsigned long getThreadId();
 

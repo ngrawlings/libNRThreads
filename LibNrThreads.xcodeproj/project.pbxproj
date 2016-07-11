@@ -7,40 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97B466571C9AE1F600DD2C30 /* HighResTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B466481C9AE1F600DD2C30 /* HighResTimer.cpp */; };
-		97B466581C9AE1F600DD2C30 /* HighResTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B466491C9AE1F600DD2C30 /* HighResTimer.h */; };
-		97B466591C9AE1F600DD2C30 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B4664A1C9AE1F600DD2C30 /* Mutex.cpp */; };
-		97B4665A1C9AE1F600DD2C30 /* Mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B4664B1C9AE1F600DD2C30 /* Mutex.h */; };
-		97B4665B1C9AE1F600DD2C30 /* Semaphore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B4664C1C9AE1F600DD2C30 /* Semaphore.cpp */; };
-		97B4665C1C9AE1F600DD2C30 /* Semaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B4664D1C9AE1F600DD2C30 /* Semaphore.h */; };
-		97B4665D1C9AE1F600DD2C30 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B4664E1C9AE1F600DD2C30 /* Task.cpp */; };
-		97B4665E1C9AE1F600DD2C30 /* Task.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B4664F1C9AE1F600DD2C30 /* Task.h */; };
-		97B4665F1C9AE1F600DD2C30 /* TaskMutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B466501C9AE1F600DD2C30 /* TaskMutex.cpp */; };
-		97B466601C9AE1F600DD2C30 /* TaskMutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B466511C9AE1F600DD2C30 /* TaskMutex.h */; };
-		97B466611C9AE1F600DD2C30 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B466521C9AE1F600DD2C30 /* Thread.cpp */; };
-		97B466621C9AE1F600DD2C30 /* Thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B466531C9AE1F600DD2C30 /* Thread.h */; };
-		97B466631C9AE1F600DD2C30 /* ThreadSafeObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B466541C9AE1F600DD2C30 /* ThreadSafeObject.h */; };
-		97B466641C9AE1F600DD2C30 /* ThreadWaitCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97B466551C9AE1F600DD2C30 /* ThreadWaitCondition.cpp */; };
-		97B466651C9AE1F600DD2C30 /* ThreadWaitCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B466561C9AE1F600DD2C30 /* ThreadWaitCondition.h */; };
+		970086611D2B988A00395012 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086511D2B988A00395012 /* config.h */; };
+		970086621D2B988A00395012 /* HighResTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 970086521D2B988A00395012 /* HighResTimer.cpp */; };
+		970086631D2B988A00395012 /* HighResTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086531D2B988A00395012 /* HighResTimer.h */; };
+		970086641D2B988A00395012 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 970086541D2B988A00395012 /* Mutex.cpp */; };
+		970086651D2B988A00395012 /* Mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086551D2B988A00395012 /* Mutex.h */; };
+		970086661D2B988A00395012 /* Semaphore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 970086561D2B988A00395012 /* Semaphore.cpp */; };
+		970086671D2B988A00395012 /* Semaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086571D2B988A00395012 /* Semaphore.h */; };
+		970086681D2B988A00395012 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 970086581D2B988A00395012 /* Task.cpp */; };
+		970086691D2B988A00395012 /* Task.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086591D2B988A00395012 /* Task.h */; };
+		9700866A1D2B988A00395012 /* TaskMutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9700865A1D2B988A00395012 /* TaskMutex.cpp */; };
+		9700866B1D2B988A00395012 /* TaskMutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 9700865B1D2B988A00395012 /* TaskMutex.h */; };
+		9700866C1D2B988A00395012 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9700865C1D2B988A00395012 /* Thread.cpp */; };
+		9700866D1D2B988A00395012 /* Thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9700865D1D2B988A00395012 /* Thread.h */; };
+		9700866E1D2B988A00395012 /* ThreadSafeObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9700865E1D2B988A00395012 /* ThreadSafeObject.h */; };
+		9700866F1D2B988A00395012 /* ThreadWaitCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9700865F1D2B988A00395012 /* ThreadWaitCondition.cpp */; };
+		970086701D2B988A00395012 /* ThreadWaitCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 970086601D2B988A00395012 /* ThreadWaitCondition.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970086511D2B988A00395012 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = libnrthreads/config.h; sourceTree = "<group>"; };
+		970086521D2B988A00395012 /* HighResTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HighResTimer.cpp; path = libnrthreads/HighResTimer.cpp; sourceTree = "<group>"; };
+		970086531D2B988A00395012 /* HighResTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighResTimer.h; path = libnrthreads/HighResTimer.h; sourceTree = "<group>"; };
+		970086541D2B988A00395012 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mutex.cpp; path = libnrthreads/Mutex.cpp; sourceTree = "<group>"; };
+		970086551D2B988A00395012 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = libnrthreads/Mutex.h; sourceTree = "<group>"; };
+		970086561D2B988A00395012 /* Semaphore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Semaphore.cpp; path = libnrthreads/Semaphore.cpp; sourceTree = "<group>"; };
+		970086571D2B988A00395012 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Semaphore.h; path = libnrthreads/Semaphore.h; sourceTree = "<group>"; };
+		970086581D2B988A00395012 /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Task.cpp; path = libnrthreads/Task.cpp; sourceTree = "<group>"; };
+		970086591D2B988A00395012 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = libnrthreads/Task.h; sourceTree = "<group>"; };
+		9700865A1D2B988A00395012 /* TaskMutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TaskMutex.cpp; path = libnrthreads/TaskMutex.cpp; sourceTree = "<group>"; };
+		9700865B1D2B988A00395012 /* TaskMutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskMutex.h; path = libnrthreads/TaskMutex.h; sourceTree = "<group>"; };
+		9700865C1D2B988A00395012 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = libnrthreads/Thread.cpp; sourceTree = "<group>"; };
+		9700865D1D2B988A00395012 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = libnrthreads/Thread.h; sourceTree = "<group>"; };
+		9700865E1D2B988A00395012 /* ThreadSafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadSafeObject.h; path = libnrthreads/ThreadSafeObject.h; sourceTree = "<group>"; };
+		9700865F1D2B988A00395012 /* ThreadWaitCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadWaitCondition.cpp; path = libnrthreads/ThreadWaitCondition.cpp; sourceTree = "<group>"; };
+		970086601D2B988A00395012 /* ThreadWaitCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadWaitCondition.h; path = libnrthreads/ThreadWaitCondition.h; sourceTree = "<group>"; };
 		97B465FF1C9ADBBE00DD2C30 /* libNrThreads.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNrThreads.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		97B466481C9AE1F600DD2C30 /* HighResTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HighResTimer.cpp; path = nrthreads/HighResTimer.cpp; sourceTree = "<group>"; };
-		97B466491C9AE1F600DD2C30 /* HighResTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighResTimer.h; path = nrthreads/HighResTimer.h; sourceTree = "<group>"; };
-		97B4664A1C9AE1F600DD2C30 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mutex.cpp; path = nrthreads/Mutex.cpp; sourceTree = "<group>"; };
-		97B4664B1C9AE1F600DD2C30 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = nrthreads/Mutex.h; sourceTree = "<group>"; };
-		97B4664C1C9AE1F600DD2C30 /* Semaphore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Semaphore.cpp; path = nrthreads/Semaphore.cpp; sourceTree = "<group>"; };
-		97B4664D1C9AE1F600DD2C30 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Semaphore.h; path = nrthreads/Semaphore.h; sourceTree = "<group>"; };
-		97B4664E1C9AE1F600DD2C30 /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Task.cpp; path = nrthreads/Task.cpp; sourceTree = "<group>"; };
-		97B4664F1C9AE1F600DD2C30 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = nrthreads/Task.h; sourceTree = "<group>"; };
-		97B466501C9AE1F600DD2C30 /* TaskMutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TaskMutex.cpp; path = nrthreads/TaskMutex.cpp; sourceTree = "<group>"; };
-		97B466511C9AE1F600DD2C30 /* TaskMutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskMutex.h; path = nrthreads/TaskMutex.h; sourceTree = "<group>"; };
-		97B466521C9AE1F600DD2C30 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = nrthreads/Thread.cpp; sourceTree = "<group>"; };
-		97B466531C9AE1F600DD2C30 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = nrthreads/Thread.h; sourceTree = "<group>"; };
-		97B466541C9AE1F600DD2C30 /* ThreadSafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadSafeObject.h; path = nrthreads/ThreadSafeObject.h; sourceTree = "<group>"; };
-		97B466551C9AE1F600DD2C30 /* ThreadWaitCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadWaitCondition.cpp; path = nrthreads/ThreadWaitCondition.cpp; sourceTree = "<group>"; };
-		97B466561C9AE1F600DD2C30 /* ThreadWaitCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadWaitCondition.h; path = nrthreads/ThreadWaitCondition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		970086501D2B987000395012 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				970086511D2B988A00395012 /* config.h */,
+				970086521D2B988A00395012 /* HighResTimer.cpp */,
+				970086531D2B988A00395012 /* HighResTimer.h */,
+				970086541D2B988A00395012 /* Mutex.cpp */,
+				970086551D2B988A00395012 /* Mutex.h */,
+				970086561D2B988A00395012 /* Semaphore.cpp */,
+				970086571D2B988A00395012 /* Semaphore.h */,
+				970086581D2B988A00395012 /* Task.cpp */,
+				970086591D2B988A00395012 /* Task.h */,
+				9700865A1D2B988A00395012 /* TaskMutex.cpp */,
+				9700865B1D2B988A00395012 /* TaskMutex.h */,
+				9700865C1D2B988A00395012 /* Thread.cpp */,
+				9700865D1D2B988A00395012 /* Thread.h */,
+				9700865E1D2B988A00395012 /* ThreadSafeObject.h */,
+				9700865F1D2B988A00395012 /* ThreadWaitCondition.cpp */,
+				970086601D2B988A00395012 /* ThreadWaitCondition.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		97B465F61C9ADBBE00DD2C30 = {
 			isa = PBXGroup;
 			children = (
-				97B466291C9ADF3600DD2C30 /* nrthreads */,
+				970086501D2B987000395012 /* src */,
 				97B466001C9ADBBE00DD2C30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,28 +95,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97B466291C9ADF3600DD2C30 /* nrthreads */ = {
-			isa = PBXGroup;
-			children = (
-				97B466481C9AE1F600DD2C30 /* HighResTimer.cpp */,
-				97B466491C9AE1F600DD2C30 /* HighResTimer.h */,
-				97B4664A1C9AE1F600DD2C30 /* Mutex.cpp */,
-				97B4664B1C9AE1F600DD2C30 /* Mutex.h */,
-				97B4664C1C9AE1F600DD2C30 /* Semaphore.cpp */,
-				97B4664D1C9AE1F600DD2C30 /* Semaphore.h */,
-				97B4664E1C9AE1F600DD2C30 /* Task.cpp */,
-				97B4664F1C9AE1F600DD2C30 /* Task.h */,
-				97B466501C9AE1F600DD2C30 /* TaskMutex.cpp */,
-				97B466511C9AE1F600DD2C30 /* TaskMutex.h */,
-				97B466521C9AE1F600DD2C30 /* Thread.cpp */,
-				97B466531C9AE1F600DD2C30 /* Thread.h */,
-				97B466541C9AE1F600DD2C30 /* ThreadSafeObject.h */,
-				97B466551C9AE1F600DD2C30 /* ThreadWaitCondition.cpp */,
-				97B466561C9AE1F600DD2C30 /* ThreadWaitCondition.h */,
-			);
-			name = nrthreads;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -99,14 +102,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B4665A1C9AE1F600DD2C30 /* Mutex.h in Headers */,
-				97B466601C9AE1F600DD2C30 /* TaskMutex.h in Headers */,
-				97B466581C9AE1F600DD2C30 /* HighResTimer.h in Headers */,
-				97B4665C1C9AE1F600DD2C30 /* Semaphore.h in Headers */,
-				97B466631C9AE1F600DD2C30 /* ThreadSafeObject.h in Headers */,
-				97B466621C9AE1F600DD2C30 /* Thread.h in Headers */,
-				97B4665E1C9AE1F600DD2C30 /* Task.h in Headers */,
-				97B466651C9AE1F600DD2C30 /* ThreadWaitCondition.h in Headers */,
+				970086701D2B988A00395012 /* ThreadWaitCondition.h in Headers */,
+				970086691D2B988A00395012 /* Task.h in Headers */,
+				970086651D2B988A00395012 /* Mutex.h in Headers */,
+				970086671D2B988A00395012 /* Semaphore.h in Headers */,
+				970086611D2B988A00395012 /* config.h in Headers */,
+				970086631D2B988A00395012 /* HighResTimer.h in Headers */,
+				9700866D1D2B988A00395012 /* Thread.h in Headers */,
+				9700866E1D2B988A00395012 /* ThreadSafeObject.h in Headers */,
+				9700866B1D2B988A00395012 /* TaskMutex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,13 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B4665F1C9AE1F600DD2C30 /* TaskMutex.cpp in Sources */,
-				97B4665D1C9AE1F600DD2C30 /* Task.cpp in Sources */,
-				97B466571C9AE1F600DD2C30 /* HighResTimer.cpp in Sources */,
-				97B4665B1C9AE1F600DD2C30 /* Semaphore.cpp in Sources */,
-				97B466641C9AE1F600DD2C30 /* ThreadWaitCondition.cpp in Sources */,
-				97B466591C9AE1F600DD2C30 /* Mutex.cpp in Sources */,
-				97B466611C9AE1F600DD2C30 /* Thread.cpp in Sources */,
+				9700866A1D2B988A00395012 /* TaskMutex.cpp in Sources */,
+				970086681D2B988A00395012 /* Task.cpp in Sources */,
+				970086621D2B988A00395012 /* HighResTimer.cpp in Sources */,
+				970086661D2B988A00395012 /* Semaphore.cpp in Sources */,
+				9700866F1D2B988A00395012 /* ThreadWaitCondition.cpp in Sources */,
+				970086641D2B988A00395012 /* Mutex.cpp in Sources */,
+				9700866C1D2B988A00395012 /* Thread.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

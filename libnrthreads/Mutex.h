@@ -33,6 +33,21 @@ namespace nrcore {
 
     class Mutex {
     public:
+        class Lock {
+        public:
+            Lock(Mutex &mutex) {
+                this->mutex = &mutex;
+                mutex.lock();
+            }
+            
+            virtual ~Lock() {
+                mutex->release();
+            }
+        private:
+            Mutex *mutex;
+        };
+        
+    public:
         Mutex(const char *tag=0, bool manage=true);
         virtual ~Mutex();
         

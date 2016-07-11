@@ -35,11 +35,11 @@ namespace nrcore {
     }
 
     void ThreadWaitCondition::trigger() {
-        int res = pthread_cond_signal(&condition);
+        pthread_cond_signal(&condition);
     }
 
     void ThreadWaitCondition::broadcast() {
-        int res = pthread_cond_broadcast(&condition);
+        pthread_cond_broadcast(&condition);
     }
 
     thread_cond_t *ThreadWaitCondition::getWaitCondition() {
