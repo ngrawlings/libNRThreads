@@ -89,7 +89,7 @@ namespace nrcore {
                 do {
                     
                     if (task_queue->get(node) == task) {
-                        task_queue->remove(node);
+                        task_queue->removeNode(node);
                     
                         if (!task_queue->length())
                             break;
@@ -112,7 +112,7 @@ namespace nrcore {
 
                 LINKEDLIST_NODE_HANDLE node = task_queue->firstNode();
                 ret = task_queue->get(node);
-                task_queue->remove(node);
+                task_queue->removeNode(node);
             }
         } catch (...) {
         }

@@ -65,7 +65,7 @@ namespace nrcore {
         if (linkedlist_node_hanble) {
             threads_mutex->lock();
             
-            threads->remove(linkedlist_node_hanble);
+            threads->removeNode(linkedlist_node_hanble);
             
             if (thread) {
                 if (status == THREAD_WAITING)
