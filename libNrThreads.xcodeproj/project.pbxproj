@@ -42,7 +42,7 @@
 		9700865E1D2B988A00395012 /* ThreadSafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadSafeObject.h; path = libnrthreads/ThreadSafeObject.h; sourceTree = "<group>"; };
 		9700865F1D2B988A00395012 /* ThreadWaitCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadWaitCondition.cpp; path = libnrthreads/ThreadWaitCondition.cpp; sourceTree = "<group>"; };
 		970086601D2B988A00395012 /* ThreadWaitCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadWaitCondition.h; path = libnrthreads/ThreadWaitCondition.h; sourceTree = "<group>"; };
-		97B465FF1C9ADBBE00DD2C30 /* libNrThreads.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNrThreads.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97B465FF1C9ADBBE00DD2C30 /* libnrthreads.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnrthreads.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		97B466001C9ADBBE00DD2C30 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97B465FF1C9ADBBE00DD2C30 /* libNrThreads.a */,
+				97B465FF1C9ADBBE00DD2C30 /* libnrthreads.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			);
 			name = NrThreads;
 			productName = NrThreads;
-			productReference = 97B465FF1C9ADBBE00DD2C30 /* libNrThreads.a */;
+			productReference = 97B465FF1C9ADBBE00DD2C30 /* libnrthreads.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -148,11 +148,12 @@
 					};
 				};
 			};
-			buildConfigurationList = 97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "LibNrThreads" */;
+			buildConfigurationList = 97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "libNrThreads" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 97B465F61C9ADBBE00DD2C30;
@@ -274,7 +275,8 @@
 					"\"$(SRCROOT)/../libNrDebug\"",
 					"\"$(SRCROOT)/../libNrIO\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = nrthreads;
+				PRODUCT_NAME = nrthreads;
 			};
 			name = Debug;
 		};
@@ -288,14 +290,15 @@
 					"\"$(SRCROOT)/../libNrDebug\"",
 					"\"$(SRCROOT)/../libNrIO\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = nrthreads;
+				PRODUCT_NAME = nrthreads;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "LibNrThreads" */ = {
+		97B465FA1C9ADBBE00DD2C30 /* Build configuration list for PBXProject "libNrThreads" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97B466011C9ADBBE00DD2C30 /* Debug */,

@@ -11,14 +11,13 @@
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
-            buildForAnalyzing = "YES"
-            hideIssues = "NO">
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "97B465FE1C9ADBBE00DD2C30"
-               BuildableName = "libNrThreads.a"
+               BuildableName = "libnrthreads.a"
                BlueprintName = "NrThreads"
-               ReferencedContainer = "container:LibNrThreads.xcodeproj">
+               ReferencedContainer = "container:libNrThreads.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97B465FE1C9ADBBE00DD2C30"
-            BuildableName = "libNrThreads.a"
+            BuildableName = "libnrthreads.a"
             BlueprintName = "NrThreads"
-            ReferencedContainer = "container:LibNrThreads.xcodeproj">
+            ReferencedContainer = "container:libNrThreads.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97B465FE1C9ADBBE00DD2C30"
-            BuildableName = "libNrThreads.a"
+            BuildableName = "libnrthreads.a"
             BlueprintName = "NrThreads"
-            ReferencedContainer = "container:LibNrThreads.xcodeproj">
+            ReferencedContainer = "container:libNrThreads.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
