@@ -264,7 +264,8 @@ namespace nrcore {
             wait_threads_mutex = 0;
             wait_any_thread_trigger = 0;
             wait_any_thread_mutex = 0;
-        }
+        } else
+            throw Exception(-1, "Not all threads have been stopped");
     }
 
     void Thread::waitForAnyAvailableThread() {
@@ -311,6 +312,12 @@ namespace nrcore {
         
         for (int i=0; i<t.length(); i++) {
             thread = t.get(i);
+            
+            while (thread->task_queue.length()) {
+                thread->wake();
+                thread->waitUntilFinished();
+            }
+            
             thread->_run = false;
             thread->wake();
         }

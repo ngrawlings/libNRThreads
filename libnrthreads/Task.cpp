@@ -29,6 +29,7 @@
 
 namespace nrcore {
 
+    bool Task::shutting_down = false;
     Mutex *Task::task_queue_mutex = 0;
     LinkedList<Task*> *Task::task_queue = 0;
 
@@ -70,11 +71,13 @@ namespace nrcore {
     }
 
     void Task::queueTask(Task *task) {
-        task->reset();
-        task_queue_mutex->lock();
-        if (!_taskExists(task))
-            task_queue->add(task);
-        task_queue_mutex->release();
+        if (!shutting_down) {
+            task->reset();
+            task_queue_mutex->lock();
+            if (!_taskExists(task))
+                task_queue->add(task);
+            task_queue_mutex->release();
+        }
     }
 
     void Task::removeTasks(Task *task) {
@@ -142,6 +145,15 @@ namespace nrcore {
     void Task::staticCleanup() {
         delete task_queue_mutex;
         delete task_queue;
+    }
+    
+    void Task::shuttingDown() {
+        shutting_down = true;
+        
+        Task *task;
+        while((task = getNextTask())) {
+            task->run();
+        }
     }
     
     Thread* Task::getAquiredThread() {

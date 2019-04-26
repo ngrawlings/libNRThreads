@@ -49,6 +49,7 @@ namespace nrcore {
         
         static int getQueuedTaskCount();
         
+        static void shuttingDown();
         static void staticInit();
         static void staticCleanup();
         
@@ -70,6 +71,7 @@ namespace nrcore {
         bool task_finished;
 
     private:
+        static bool shutting_down;
         static Mutex *task_queue_mutex;
         static LinkedList<Task*> *task_queue;
         
