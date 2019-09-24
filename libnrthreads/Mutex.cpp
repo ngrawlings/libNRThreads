@@ -68,8 +68,8 @@ namespace nrcore {
             return true;
         } else {
     #if defined(__APPLE__) || defined(__ANDROID__)
-            timeval start, current;
-            gettimeofday(&start, NULL);
+            timespec start, current;
+            clock_gettime(CLOCK_MONOTONIC, &start);
             long elapse;
             while (true) {
                     
@@ -78,10 +78,10 @@ namespace nrcore {
                     return true;
                 }
 
-                gettimeofday(&current, NULL);
+                clock_gettime(CLOCK_MONOTONIC, &current);
                 elapse = (start.tv_sec - current.tv_sec) * 1000;
-                elapse += (start.tv_usec - current.tv_usec) / 1000000;
-                    
+                elapse += (start.tv_nsec - current.tv_nsec) / 1000000;
+                
                 if (elapse >= timeout)
                     return false;
                     
