@@ -196,7 +196,6 @@ namespace nrcore {
     }
 
     void Thread::wake() {
-        printf("Waking thread %p\n", this);
         trigger.trigger();
     }
 
