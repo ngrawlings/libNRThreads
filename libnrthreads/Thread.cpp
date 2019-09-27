@@ -158,10 +158,6 @@ namespace nrcore {
         
         mutex.wait(&trigger);
         mutex.release();
-
-        wait_threads_mutex->lock();
-        wait_threads->remove(this);
-        wait_threads_mutex->release();
         
         status = THREAD_ACTIVE;
     }
@@ -200,6 +196,7 @@ namespace nrcore {
     }
 
     void Thread::wake() {
+        printf("Waking thread %p\n", this);
         trigger.trigger();
     }
 
@@ -219,6 +216,7 @@ namespace nrcore {
             try {
                 thrd = dynamic_cast<Thread*>(wait_threads->get(wait_threads->firstNode()));
                 if (thrd) {
+                    wait_threads->removeNode(wait_threads->firstNode());
                     wait_threads_mutex->release();
                     thrd->wake();
                 }

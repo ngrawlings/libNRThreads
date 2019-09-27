@@ -23,11 +23,13 @@
 //
 
 #include "ThreadWaitCondition.h"
+#include <sys/errno.h>
 
 namespace nrcore {
 
     ThreadWaitCondition::ThreadWaitCondition() {
         pthread_cond_init(&condition, 0);
+        count = 0;
     }
 
     ThreadWaitCondition::~ThreadWaitCondition() {
@@ -35,15 +37,34 @@ namespace nrcore {
     }
 
     void ThreadWaitCondition::trigger() {
-        pthread_cond_signal(&condition);
+        int ccnt = count;
+        while (ccnt && ccnt == count) {
+            pthread_cond_signal(&condition);
+            if (ccnt == count)
+                usleep(100);
+        }
     }
 
     void ThreadWaitCondition::broadcast() {
-        pthread_cond_broadcast(&condition);
+        while (count) {
+            pthread_cond_broadcast(&condition);
+            usleep(100);
+        }
     }
 
-    thread_cond_t *ThreadWaitCondition::getWaitCondition() {
-        return &condition;
+    void ThreadWaitCondition::wait(thread_mutex_t *mutex) {
+        count++;
+        pthread_cond_wait(&condition, mutex);
+        count--;
+    }
+    
+    bool ThreadWaitCondition::timedWait(thread_mutex_t *mutex, timespec *tm) {
+        count++;
+        if (pthread_cond_timedwait(&condition, mutex, tm) == ETIMEDOUT) {
+            count--;
+            return false;
+        }
+        return true;
     }
 
 }

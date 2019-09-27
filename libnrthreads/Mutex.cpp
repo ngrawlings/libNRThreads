@@ -111,13 +111,13 @@ namespace nrcore {
     void Mutex::wait(ThreadWaitCondition *cond, int nsecs) {
         if (!nsecs) {
             lock();
-            pthread_cond_wait(cond->getWaitCondition(), &mutex);
+            cond->wait(&mutex);
             owner = pthread_self();
         } else {
             struct timespec tm;
             tm.tv_nsec = nsecs;
             tm.tv_sec = 0;
-            if (pthread_cond_timedwait(cond->getWaitCondition(), &mutex, &tm) != ETIMEDOUT)
+            if (cond->timedWait(&mutex, &tm))
                 owner = pthread_self();
         }
     }

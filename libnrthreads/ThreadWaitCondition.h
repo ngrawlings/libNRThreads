@@ -40,10 +40,12 @@ namespace nrcore {
         
     protected:
         friend class Mutex;
-        thread_cond_t *getWaitCondition();
+        void wait(thread_mutex_t *mutex);
+        bool timedWait(thread_mutex_t *mutex, timespec *tm);
         
     private:
         thread_cond_t condition;
+        int count;
     };
     
 }
