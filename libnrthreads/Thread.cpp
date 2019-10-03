@@ -123,6 +123,18 @@ namespace nrcore {
                 }
                 
                 while ((task = dynamic_cast<Task*>(Task::getNextTask()))) {
+                    int cnt = Task::getQueuedTaskCount();
+                    if (cnt) {
+                        LinkedListState<Thread*> wt_state(wait_threads);
+                        Thread **t;
+                        while (wt_state.iterate(&t) && cnt) {
+                            if (*t != this) {
+                                (*t)->wake();
+                                cnt--;
+                            }
+                        }
+                    }
+                    
                     task->run();
                     task->acquired_thread = 0;
                     if (task->dynamicly_allocated && task->task_finished)
@@ -149,7 +161,6 @@ namespace nrcore {
 
         status = THREAD_WAITING;
         wait_threads->add(this);
-        
         wait_threads_mutex->release();
         
         wait_for_thread_trigger.trigger();
@@ -158,6 +169,10 @@ namespace nrcore {
         
         mutex.wait(&trigger);
         mutex.release();
+        
+        wait_threads_mutex->lock();
+        wait_threads->remove(this);
+        wait_threads_mutex->release();
         
         status = THREAD_ACTIVE;
     }
@@ -307,20 +322,19 @@ namespace nrcore {
         LinkedList<Thread*> t;
         t.copy(threads);
         
-        for (int i=0; i<t.length(); i++) {
-            thread = t.get(i);
-            
-            while (thread->task_queue.length()) {
-                thread->wake();
-                thread->waitUntilFinished();
-            }
-            
-            thread->_run = false;
-            thread->wake();
-        }
-        
         while(threads->length()) {
-            t.get(0)->wake();
+            t.copy(threads);
+            for (int i=0; i<t.length(); i++) {
+                thread = t.get(i);
+                
+                while (thread->task_queue.length()) {
+                    thread->wake();
+                    thread->waitUntilFinished();
+                }
+                
+                thread->_run = false;
+                thread->wake();
+            }
             usleep(500);
         }
     }
